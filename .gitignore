@@ -205,3 +205,11 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+.DS_Store
+
+# Ignore all models by default; only ship the final model and metadata needed for deploy
+models/*
+!models/model.joblib
+!models/metadata.json

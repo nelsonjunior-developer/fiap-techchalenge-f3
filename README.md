@@ -23,6 +23,20 @@ A detecção precoce e precisa do câncer de mama é fundamental para aumentar a
 
 ## Estrutura do projeto
 
+## Seleção de Modelos e Relatórios
+
+O script `src/train.py` realiza a comparação entre quatro algoritmos de classificação: LogisticRegression, DecisionTree, RandomForest e SVC. A avaliação dos modelos é feita utilizando validação cruzada (cross-validation) com 5 folds, tendo como métrica principal o F1-score.
+
+Durante o processo de modelagem, são gerados e salvos os seguintes artefatos e relatórios:
+
+- O modelo campeão (com melhor desempenho na validação cruzada) é salvo em `models/model.joblib`.
+- Metadados do processo de seleção são salvos em `models/metadata.json`, incluindo métricas de validação, scores de cross-validation e informações sobre o modelo campeão.
+- Todos os modelos treinados (incluindo os que não foram escolhidos como campeão) são salvos individualmente em `models/experiments/`.
+- O ranking de desempenho dos modelos (baseado nos resultados da validação cruzada) é registrado em `reports/model_selection.csv`.
+- As métricas de teste de todos os modelos avaliados são documentadas em `reports/test_metrics.csv`.
+
+Esses relatórios e artefatos garantem transparência acadêmica no processo de desenvolvimento, permitindo a auditoria das escolhas de modelo e facilitando a reprodutibilidade dos resultados.
+
 ```
 tech-challenge/
 │
