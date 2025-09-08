@@ -1,0 +1,71 @@
+{
+  "best_model": "logreg",
+  "cv_means": {
+    "logreg": 0.9805295944748366,
+    "dtree": 0.9319011948418033,
+    "rf": 0.9717648009433312,
+    "svc": 0.9788204206167593
+  },
+  "cv_stds": {
+    "logreg": 0.010455379562709855,
+    "dtree": 0.014434630245039952,
+    "rf": 0.014356406131640171,
+    "svc": 0.009115322479561231
+  },
+  "metrics": {
+    "f1": 0.9645390070921985,
+    "accuracy": 0.956140350877193,
+    "precision": 0.9855072463768116,
+    "recall": 0.9444444444444444,
+    "roc_auc": 0.9953703703703703,
+    "confusion_matrix": [
+      [
+        41,
+        1
+      ],
+      [
+        4,
+        68
+      ]
+    ]
+  },
+  "feature_names": [
+    "mean radius",
+    "mean texture",
+    "mean perimeter",
+    "mean area",
+    "mean smoothness",
+    "mean compactness",
+    "mean concavity",
+    "mean concave points",
+    "mean symmetry",
+    "mean fractal dimension",
+    "radius error",
+    "texture error",
+    "perimeter error",
+    "area error",
+    "smoothness error",
+    "compactness error",
+    "concavity error",
+    "concave points error",
+    "symmetry error",
+    "fractal dimension error",
+    "worst radius",
+    "worst texture",
+    "worst perimeter",
+    "worst area",
+    "worst smoothness",
+    "worst compactness",
+    "worst concavity",
+    "worst concave points",
+    "worst symmetry",
+    "worst fractal dimension"
+  ],
+  "class_names": [
+    "malignant",
+    "benign"
+  ],
+  "random_state": 42,
+  "cv_scoring": "f1",
+  "cv_n_splits": 5
+}

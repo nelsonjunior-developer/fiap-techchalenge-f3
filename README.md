@@ -41,24 +41,50 @@ Esses relatórios e artefatos garantem transparência acadêmica no processo de 
 tech-challenge/
 │
 ├── data/
-│   ├── raw/               # Dados originais (CSV exportado do dataset)
-│   ├── processed/         # Dados tratados e divididos em treino/teste
+│   ├── raw/                 # Dados originais (CSV exportado do dataset)
+│   └── processed/           # (opcional) Dados tratados/splits, se decidirmos salvar
 │
 ├── notebooks/
-│   └── eda.ipynb          # Análises exploratórias e estatísticas
+│   └── eda.ipynb            # Análises exploratórias e estatísticas
 │
 ├── src/
-│   ├── train.py           # Treino do modelo, avaliação e salvamento de artefatos
-│   ├── evaluate.py        # Scripts auxiliares de avaliação e gráficos
-│   └── utils/             # Funções auxiliares de pré-processamento
+│   ├── train.py             # Treino, comparação (CV), artefatos e relatórios
+│   └── evaluate.py          # Avaliação visual (CM/ROC/PR) e comparativos
 │
 ├── models/
-│   ├── model.joblib       # Modelo treinado
-│   ├── scaler.joblib      # Escalonador salvo (se usado)
-│   └── metadata.json      # Métricas e informações do treino
+│   ├── model.joblib         # Modelo campeão (pipeline completo)
+│   ├── metadata.json        # Métricas, CV e metadados
+│   └── experiments/         # Modelos treinados de cada algoritmo
 │
-├── app.py                 # Aplicação Streamlit (deploy em nuvem)
-├── requirements.txt       # Dependências do projeto
-├── README.md              # Documentação principal
-└── LICENSE                # Licença do projeto
+├── reports/
+│   ├── model_selection.csv  # Ranking (CV)
+│   ├── test_metrics.csv     # Métricas em teste por modelo
+│   └── figures/             # Gráficos (CM, ROC, PR, comparativos)
+│
+├── app.py                   # Aplicação Streamlit (deploy em nuvem)
+├── requirements.txt         # Dependências do projeto
+├── README.md                # Documentação principal
+└── LICENSE                  # Licença do projeto
 ```
+
+## Avaliação e Relatórios
+
+O script `src/evaluate.py` gera gráficos e relatórios adicionais para complementar a análise do modelo campeão e a comparação entre modelos.
+
+Ele cria e salva:
+
+- Matriz de confusão, curva ROC e curva Precision-Recall do modelo campeão (`reports/figures/`).
+- Classification report em texto (`reports/classification_report.txt`).
+- Gráficos de barras comparativos entre modelos usando os relatórios de seleção (`reports/model_selection.csv` e `reports/test_metrics.csv`).
+
+Esses outputs enriquecem a análise, facilitam a interpretação dos resultados.
+
+## Checklist de Requisitos (Tech Challenge)
+
+- [ ] Definição do problema (Classificação binária)
+- [ ] Coleta/armazenamento dos dados (dataset público salvo em CSV)
+- [ ] Análise exploratória (EDA notebook)
+- [ ] Processamento dos dados (split, escalonamento, balanceamento via class_weight)
+- [ ] Modelagem (comparação de 4 algoritmos, seleção por F1)
+- [ ] Avaliação (métricas, gráficos, relatórios)
+- [ ] Deploy (aplicação Streamlit em nuvem)
