@@ -1,6 +1,11 @@
 # fiap-techchalenge-f3
 
+
 Este projeto é um desafio acadêmico da FIAP, focado em Machine Learning aplicado a um problema de classificação. Utiliza um dataset público e envolve todas as etapas do ciclo de vida de um modelo de ML, desde a coleta e armazenamento dos dados até o deploy em nuvem por meio de uma aplicação Streamlit.
+
+## Versão do Python
+
+O projeto foi desenvolvido e testado com Python 3.11.9. Recomenda-se utilizar Python 3.11 ou superior para garantir total compatibilidade com as dependências e scripts fornecidos.
 
 ## Objetivo do Projeto e Visão Geral do Modelo de Machine Learning
 

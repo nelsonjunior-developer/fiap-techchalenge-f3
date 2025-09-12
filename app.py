@@ -192,7 +192,14 @@ with tab_batch:
             # Monta DataFrame de saída com predições
             df_out = df_in.copy()
             df_out["pred_class"] = [class_names[i] for i in pred_idx]
-            df_out["proba_benign"] = proba_benign
+            df_out["probabilidade_benign"] = proba_benign
+            confiança_predicao = []
+            for i, p_benign in zip(pred_idx, proba_benign):
+                if class_names[i] == "benign":
+                    confiança_predicao.append(p_benign)
+                else:
+                    confiança_predicao.append(1 - p_benign)
+            df_out["confiança_predicao"] = confiança_predicao
 
             st.success("Predições geradas com sucesso!")
             st.dataframe(df_out.head(), use_container_width=True)
