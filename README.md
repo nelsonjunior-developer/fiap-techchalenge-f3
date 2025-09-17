@@ -96,4 +96,36 @@ Esses outputs enriquecem a análise, facilitam a interpretação dos resultados.
 
 ## Deploy da Aplicação
 
+
 A aplicação está disponível publicamente via Streamlit Cloud: [https://fiap-techchallenge-f3.streamlit.app](https://fiap-techchallenge-f3.streamlit.app)
+
+## Como Rodar o Notebook
+
+Para executar o notebook exploratório (`notebooks/eda.ipynb`) localmente, siga os passos abaixo:
+
+1. **Ative o ambiente virtual**:
+   ```
+   source .venv/bin/activate
+   ```
+
+2. **Instale as dependências**:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. **Garanta que o pacote `ipykernel` está instalado**  
+   (já incluído no `requirements.txt`).
+
+4. **(Opcional) Registre o ambiente virtual como kernel do Jupyter**  
+   Caso deseje selecionar o kernel correspondente no Jupyter:
+   ```
+   python -m ipykernel install --user --name=tech-challenge-env --display-name "Python (tech-challenge)"
+   ```
+
+5. **Abra o notebook**:
+   ```
+   jupyter notebook notebooks/eda.ipynb
+   ```
+
+6. **No Jupyter, selecione o kernel correto**  
+   Escolha o kernel chamado **Python (tech-challenge)** para garantir que o ambiente e as dependências corretas serão utilizados.
