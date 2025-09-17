@@ -5,3 +5,5 @@ joblib
 streamlit>=1.28
 matplotlib
 altair<5
+notebook
+ipykernel
