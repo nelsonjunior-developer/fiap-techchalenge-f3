@@ -93,3 +93,7 @@ Esses outputs enriquecem a análise, facilitam a interpretação dos resultados.
 - [ ] Modelagem (comparação de 4 algoritmos, seleção por F1)
 - [ ] Avaliação (métricas, gráficos, relatórios)
 - [ ] Deploy (aplicação Streamlit em nuvem)
+
+## Deploy da Aplicação
+
+A aplicação está disponível publicamente via Streamlit Cloud: [https://fiap-techchallenge-f3.streamlit.app](https://fiap-techchallenge-f3.streamlit.app)
