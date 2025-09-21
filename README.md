@@ -86,13 +86,13 @@ Esses outputs enriquecem a análise, facilitam a interpretação dos resultados.
 
 ## Checklist de Requisitos (Tech Challenge)
 
-- [ ] Definição do problema (Classificação binária)
-- [ ] Coleta/armazenamento dos dados (dataset público salvo em CSV)
-- [ ] Análise exploratória (EDA notebook)
-- [ ] Processamento dos dados (split, escalonamento, balanceamento via class_weight)
-- [ ] Modelagem (comparação de 4 algoritmos, seleção por F1)
-- [ ] Avaliação (métricas, gráficos, relatórios)
-- [ ] Deploy (aplicação Streamlit em nuvem)
+- [X] Definição do problema (Classificação binária)
+- [X] Coleta/armazenamento dos dados (dataset público salvo em CSV)
+- [X] Análise exploratória (EDA notebook)
+- [X] Processamento dos dados (split, escalonamento, balanceamento via class_weight)
+- [X] Modelagem (comparação de 4 algoritmos, seleção por F1)
+- [X] Avaliação (métricas, gráficos, relatórios)
+- [X] Deploy (aplicação Streamlit em nuvem)
 
 ## Deploy da Aplicação
 
