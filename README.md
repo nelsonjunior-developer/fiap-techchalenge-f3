@@ -47,7 +47,6 @@ tech-challenge/
 │
 ├── data/
 │   ├── raw/                 # Dados originais (CSV exportado do dataset)
-│   └── processed/           # (opcional) Dados tratados/splits, se decidirmos salvar
 │
 ├── notebooks/
 │   └── eda.ipynb            # Análises exploratórias e estatísticas
