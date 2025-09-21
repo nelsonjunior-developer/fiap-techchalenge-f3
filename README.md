@@ -17,6 +17,23 @@ O objetivo deste projeto é desenvolver um modelo de classificação binária qu
 - **Modelagem:** Teste e avaliação de diferentes algoritmos de classificação para identificar o modelo que apresenta melhor desempenho para o problema proposto.
 - **Deploy:** Implementação do modelo treinado em uma aplicação web usando Streamlit, permitindo a interação e utilização do modelo em ambiente de nuvem.
 
+### Detalhes técnicos essenciais
+
+- **Dataset e features:** Utilizamos o **Breast Cancer Wisconsin (Diagnostic – WDBC)** com **30 features numéricas** extraídas de imagens (medidas como raio, textura, concavidade, etc.).  
+- **Variável alvo (`target`):** é a coluna que o modelo deve prever, com o mapeamento **`0 = malignant (maligno)`** e **`1 = benign (benigno)`**. As 30 demais colunas são as **features** usadas para a classificação.
+- **Esquema de entrada (app):**
+  - **Formulário:** campos para as 30 features numéricas.  
+  - **Predição em lote (CSV):** o arquivo deve conter **as mesmas 30 colunas** do treino. A ordem das colunas pode variar; o app reordena internamente usando `feature_names` de `models/metadata.json`.
+- **Reprodutibilidade:** usamos **`random_state = 42`** em todo o pipeline e **split estratificado (80/20)** para garantir comparabilidade e manter a proporção de classes.
+- **Pré-processamento:** **padronização (StandardScaler)** aplicada **dentro do Pipeline** para os modelos que precisam de escala. Assim, o mesmo pré-processamento é aplicado de forma consistente no treino e na inferência.
+- **Algoritmos comparados:** **LogisticRegression** (`class_weight="balanced"`), **DecisionTree**, **RandomForest** (`n_estimators=300`) e **SVC (RBF, probability=True, class_weight="balanced")**.
+- **Seleção de modelo:** **validação cruzada estratificada (5-fold)** com métrica **F1**; selecionamos o modelo com **maior F1 médio**. Em seguida, refazemos o treino no conjunto de treino completo e avaliamos no **teste**.
+- **Métricas reportadas:** **F1** (principal), **accuracy**, **precision**, **recall**, **ROC AUC** e **matriz de confusão**. Consideramos o leve desbalanceamento de classes via `class_weight="balanced"`.
+- **Probabilidades no app:** exibimos `probabilidade_benign = P(benign)`. Além disso, o CSV de predição em lote inclui a coluna **`confiança_predicao`**, que mostra a **probabilidade da classe prevista** (se a classe prevista é benigna, usamos `P(benign)`; se for maligna, usamos `1 - P(benign)`). O **limiar padrão** é **0.5**.
+- **Artefatos do modelo:**  
+  - `models/model.joblib` → **Pipeline** completo (pré-processamento + classificador) pronto para `predict()` e `predict_proba()`.  
+  - `models/metadata.json` → metadados (lista de `feature_names`, `class_names`, métricas do campeão, `cv_means`/`cv_stds`, `random_state`, etc.).
+- **Deploy:** o app em Streamlit consome esses artefatos versionados no repositório e disponibiliza uma URL pública para uso e avaliação.
 
 Este fluxo completo garante que o projeto não apenas desenvolva um modelo eficiente, mas também entregue uma solução funcional e acessível para o usuário final.
 
@@ -42,6 +59,7 @@ Durante o processo de modelagem, são gerados e salvos os seguintes artefatos e 
 
 Esses relatórios e artefatos garantem transparência acadêmica no processo de desenvolvimento, permitindo a auditoria das escolhas de modelo e facilitando a reprodutibilidade dos resultados.
 
+## Estrutura do Projeto
 ```
 tech-challenge/
 │
