@@ -18,8 +18,9 @@ O objetivo deste projeto é desenvolver um modelo de classificação binária qu
 - **Deploy:** Implementação do modelo treinado em uma aplicação web usando Streamlit, permitindo a interação e utilização do modelo em ambiente de nuvem.
 
 ### Detalhes técnicos essenciais
-
+- O dataset utilizado tem 569 amostras × 31 colunas (30 features + 1 target).
 - **Dataset e features:** Utilizamos o **Breast Cancer Wisconsin (Diagnostic – WDBC)** com **30 features numéricas** extraídas de imagens (medidas como raio, textura, concavidade, etc.).  
+
 - **Variável alvo (`target`):** é a coluna que o modelo deve prever, com o mapeamento **`0 = malignant (maligno)`** e **`1 = benign (benigno)`**. As 30 demais colunas são as **features** usadas para a classificação.
 - **Esquema de entrada (app):**
   - **Formulário:** campos para as 30 features numéricas.  
