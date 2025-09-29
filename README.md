@@ -43,8 +43,6 @@ Este projeto aborda a detecção de câncer de mama, com foco em prever se um tu
 
 A detecção precoce e precisa do câncer de mama é fundamental para aumentar as chances de sucesso no tratamento e reduzir a mortalidade. Utilizar modelos preditivos pode apoiar a triagem médica, auxiliando profissionais de saúde a tomar decisões mais rápidas e assertivas sobre o diagnóstico. Assim, o modelo desenvolvido neste projeto pode ser uma ferramenta importante no apoio à tomada de decisão clínica, proporcionando uma segunda opinião baseada em dados objetivos extraídos de exames.
 
-## Estrutura do projeto
-
 ## Seleção de Modelos e Relatórios
 
 O script `src/train.py` realiza a comparação entre quatro algoritmos de classificação: LogisticRegression, DecisionTree, RandomForest e SVC. A avaliação dos modelos é feita utilizando validação cruzada (cross-validation) com 5 folds, tendo como métrica principal o F1-score.
