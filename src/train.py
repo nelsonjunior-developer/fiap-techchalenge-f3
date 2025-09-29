@@ -8,19 +8,6 @@ Comparar múltiplos algoritmos de classificação (LogisticRegression,
 DecisionTree, RandomForest e SVC) para prever se um tumor de mama é
 maligno ou benigno (dataset público Breast Cancer Wisconsin - Diagnostic).
 
-Etapas
-------
-1) Criar pastas necessárias (dados, relatórios, artefatos).
-2) Carregar o dataset do scikit-learn e salvar CSV bruto para reprodutibilidade.
-3) Separar X (features) e y (alvo).
-4) Split estratificado em treino e teste.
-5) Definir pipelines por modelo e realizar validação cruzada (F1, 5-fold).
-6) Salvar ranking de modelos em `reports/model_selection.csv`.
-7) Treinar **cada** modelo no treino completo e salvar em `models/experiments/`.
-8) Escolher o campeão (maior F1 médio na CV), avaliar no **teste** e salvar:
-   - `models/model.joblib` (pipeline do campeão)
-   - `models/metadata.json` (metadados: best_model, cv, métricas)
-   - `reports/test_metrics.csv` (métricas de teste de todos os modelos)
 """
 
 # Bibliotecas padrão e utilitários

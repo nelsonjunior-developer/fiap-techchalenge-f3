@@ -112,7 +112,7 @@ Esses outputs enriquecem a análise, facilitam a interpretação dos resultados.
 ## Deploy da Aplicação
 
 
-A aplicação está disponível publicamente via Streamlit Cloud: [https://fiap-techchallenge-f3.streamlit.app](https://fiap-techchallenge-f3.streamlit.app)
+A aplicação está disponível publicamente via Streamlit Cloud: [https://nelsonjunior-fiap-techchalenge-f3-app.streamlit.app/](https://nelsonjunior-fiap-techchalenge-f3-app.streamlit.app/)
 
 ## Como Rodar o Notebook
 
